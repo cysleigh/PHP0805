@@ -6,7 +6,7 @@ if (isset($_POST["btnHome"]))
 }
 
 if (isset($_POST["btnOK"]))
-{
+{ //session_start();
 	$sUserName = $_POST["txtUserName"];
 	if (trim($sUserName) != "")
 	{

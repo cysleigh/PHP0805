@@ -1,5 +1,8 @@
 <?php 
-  if (!isset($_COOKIE["userName"]))
+  //改成session
+  session_start();
+  //if (!isset($_COOKIE["userName"]))
+  if (!isset($_SESSION["userName"]))
   {
   	header("Location: login.php");
   	exit();

@@ -4,13 +4,15 @@ if (isset($_POST["btnHome"]))
 	header("Location: index.php");
 	exit();
 }
-
+//改成session 08/05
 if (isset($_POST["btnOK"]))
 {
 	$sUserName = $_POST["txtUserName"];
 	if (trim($sUserName) != "")
 	{
-		setcookie("userName", $sUserName);
+		session_start();
+		$_SESSION["userName"] = $sUserName;
+		//setcookie("userName", $sUserName);
 		header("Location: index.php");
 		exit();
 	}
