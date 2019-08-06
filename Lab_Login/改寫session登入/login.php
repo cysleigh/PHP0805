@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if(isset($_GET["signout"])){
+	unset($_SESSION["userName"]);
+	//session_destroy();
+	header("Location: index.php");
+	exit();
+}
+
 if (isset($_POST["btnHome"]))
 {
 	header("Location: index.php");
@@ -26,7 +35,7 @@ if (isset($_POST["btnOK"]))
 <title>Lab - Login</title>
 </head>
 <body>
-	<form id="form1" name="form1" method="post" action="login.php">
+	<form id="form1" name="form1" method="post" action="">
 		<table width="300" border="0" align="center" cellpadding="5"
 			cellspacing="0" bgcolor="#F2F2F2">
 			<tr>
